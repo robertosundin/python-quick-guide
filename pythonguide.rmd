@@ -51,7 +51,7 @@ a dead language as of 2020. I therefore _strongly_ advice you to use python 3+.
 # Help
 
 A very useful function is the `help()` function. Whenever in doubt, use it. Help on any built-in function
-`function()` can be found by typing `help(function)` into the python console (note that no parantheses should be 
+`function()` can be found by typing `help(function)` into the python console (note that no parentheses should be 
 used for the function you want help for).
 
 # Data types
@@ -85,7 +85,7 @@ the following exceptions/properties
 > If it looks like a duck, swims like a duck, and quacks like a duck, then it probably _is_ a duck. 
 
 Python uses what is commonly referred to as _duck-typing_, meaning that instead of explicitly
-declarating the data type of a variable, python will set the data type according to how the variable
+declaring the data type of a variable, python will set the data type according to how the variable
 is defined. Let's have a look at this by creating two variables `a` and `b`:
 
 ```{python}
@@ -264,7 +264,7 @@ else:
 
 The flow scheme of the `if`-statement is the following
 
-- The program evalutes `condition1`
+- The program evaluates `condition1`
     * If `condition1` is `True`, the program runs the indented code-block under the statement and then
       skips _both_ the `elif` and the `else`-statement, without even evaluating `condition2`.
     * If `condition1` is `False`, the program proceeds to evaluate `condition2`.
@@ -306,7 +306,7 @@ for _ in range(5):
 print(a)
 ```	
 
-A very pythonic feature is the possiblity to run through e.g all elements of a list
+A very pythonic feature is the possibility to run through e.g all elements of a list
 
 ```{python}
 fruits = ['apple','banana','orange']
