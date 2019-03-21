@@ -200,6 +200,26 @@ The elements can also be changed the same way
 a[1] = 10
 print(a)
 ```	
+A very pythonic feature is that negative numbers can be used to count
+backwards. The last element of a list can thus be accessed the following way
+
+```{python}
+print(a[-1])
+```	
+
+We can also _slice_ a list using brackets and a colon. For example,
+`a[x:y]` returns a list containing the elements of a list `a` with index
+`x` through `y-1`
+
+```{python}
+print(a[1:4])
+```	
+Omitting `x`, returns a list starting from the first element until index
+`y-1`, while omitting `y` returns a list starting from index `x` until
+the end of the list. Omitting both returns the original list.
+
+Note that slicing does not alter the original list, but only returns a new
+list that can be assigned to a variable.
 
 ### Tuples
 
@@ -456,7 +476,7 @@ Note that all methods must include `self` as the first argument.
 
 ## List comprehensions
 
-Oftentimes we search to create arrays containing certain type of elements.
+Oftentimes we need to create arrays containing certain type of elements.
 Let's say for example that we want a list containing numbers from 0 to 9.
 A standard approach would be to create an empty list and appending these
 numbers, one-by-one, in a for-loop
@@ -483,14 +503,21 @@ slicing operation
 a = [2*i for i in range(10)][1:]
 print(a)
 ```	
-or we could use another feature of list comprehensions called _filtering_
+or adjust the input of the `range`-function
+
+```{python}
+a = [2*i for i in range(1,10)]
+print(a)
+```	
+
+but perhaps the most clean and easily read solution, is to use feature of list comprehensions called _filtering_
 
 ```{python}
 a = [i for i in range(20) if i%2==0 and i!=0]
 print(a)
 ```	
 
-where an if-statement has been added at the end.
+where the filtering part is coming from the if-statement added at the end.
 
 \appendix
 \newpage
