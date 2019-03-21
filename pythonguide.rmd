@@ -70,7 +70,7 @@ The available data types in python are
 
 Most should be familiar with the upper 6 data types, whilst not knowing too much about the bottom 3,
 as they are more somewhat specific to the python language. We will
-not go into to much detail about what these are other than that they are types of arrays with
+not go into too much detail about what these are other than that they are types of arrays with
 the following exceptions/properties
 
 - Tuples
