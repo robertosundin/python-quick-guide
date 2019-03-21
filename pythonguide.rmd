@@ -13,9 +13,9 @@ header-includes:
    - \usepackage{mathpazo}
 output:
   pdf_document:
-    toc: false
-    toc_depth: 0
-    number_sections: false
+    toc: true
+    toc_depth: 3
+    number_sections: true
     keep_tex: false
     highlight: tango
     template: eigen
@@ -48,7 +48,7 @@ guide isn't enough I recommend you to refer to the [official documentation](http
 This guide is written with python 3.7 kept in mind. Please note that python 2 is officially considered
 a dead language as of 2020. I therefore _strongly_ advice you to use python 3+.
 
-# Help
+## Help
 
 A very useful function is the `help()` function. Whenever in doubt, use it. Help on any built-in function
 `function()` can be found by typing `help(function)` into the python console (note that no parentheses should be 
@@ -79,7 +79,6 @@ the following exceptions/properties
     - Hashed, have ordered pairs of _keywords_ and their respective _values_.
 - Sets
     - Just like mathematical sets, no duplicates allowed.
-
 
 ## Variable declaration; duck-typing
 > If it looks like a duck, swims like a duck, and quacks like a duck, then it probably _is_ a duck. 
@@ -190,10 +189,9 @@ a+str(b)
 
 Lists are indexed and the $i$:th element is fetched
 using brackets, e.g `a[i]`
-```{python,echo=FALSE}
-a = [1,2,3]
-```	
+
 ```{python}
+a = [1,2,3]
 print(a[0])
 ```	
 The elements can also be changed the same way
@@ -206,26 +204,23 @@ print(a)
 ### Tuples
 
 - Creation: `a = (1,2,3)`.
-```{python,echo=FALSE}
-a = (1,2,3)
-```	
 
 Tuples are indexed and values are fetched just as
 for lists. However, once created, elements cannot be changed (tuples are immutable!)
 
 ```{python,error=TRUE}
+a = (1,2,3)
 a[1] = 10
 ```	
 
 ### Dictionaries
 
-- Creation: `a = {'one': 1, 'two': 2}`.
-```{python,echo=FALSE}
-a = {'one': 1, 'two': 2}
-```	
+- Creation: `a = {'keyword1': 1, 'keyword2': 'two'}`.
+
 Values can be fetched by using the `get()` method
 ```{python}
-print(a.get('one'))
+a = {'keyword1': 1, 'keyword2': 'two'}
+print(a.get('keyword2'))
 ```	
 
 Dictionary keywords can also be run through using `for in`-loops
@@ -234,6 +229,8 @@ Dictionary keywords can also be run through using `for in`-loops
 for key in a:
     print(key)
 ```	
+
+Note that keywords are not run through in the same order as they were declared.
 
 
 ### Sets
@@ -292,7 +289,7 @@ The flow scheme of the `if`-statement is the following
 
 ## While-loops
 
-The syntax for while-loops in python is the following:
+The syntax for while-loops in python is the following
 
 ```{python}
 a = 0
@@ -305,7 +302,7 @@ print(list)
 
 ## For-loops
 
-The syntax for while-loops in python is the following:
+The syntax for for-loops in python is the following
 
 ```{python}
 list = []
@@ -314,7 +311,7 @@ for i in range(5):
 print(list) 
 ```	
 
-If the index used for counting is not used in the for loop, the convention
+If the index used for counting is not explicitly stated inside the for loop, the convention
 is to use an underscore in the following way
 
 ```{python}
@@ -324,7 +321,7 @@ for _ in range(5):
 print(a)
 ```	
 
-A very _pythonic_ feature is the possibility to run through e.g all elements of a list
+A very _pythonic_ feature is the possibility to run through, for example, all elements of a list
 
 ```{python}
 fruits = ['apple','banana','orange']
@@ -428,7 +425,6 @@ a = Person('John Doe')
 print(a.name)
 ```	
 
-
 ## Methods
 
 Methods are defined in the following way
@@ -455,3 +451,64 @@ print(a.name)
 ```	
 
 Note that all methods must include `self` as the first argument.
+
+# Pure Python Power (Pythonic Possibilities)
+
+## List comprehensions
+
+Oftentimes we search to create arrays containing certain type of elements.
+Let's say for example that we want a list containing numbers from 0 to 9.
+A standard approach would be to create an empty list and appending these
+numbers, one-by-one, in a for-loop
+
+```{python}
+a = []
+for i in range(10):
+    a.append(i)
+print(a)
+```	
+
+In python, we can harness the power of so called _list comprehensions_ to fit
+this into one single line
+
+```{python}
+a = [i for i in range(10)]
+print(a)
+```	
+
+Let's say we now want all even numbers from 2 to 18. Either we can make a
+slicing operation
+
+```{python}
+a = [2*i for i in range(10)][1:]
+print(a)
+```	
+or we could use another feature of list comprehensions called _filtering_
+
+```{python}
+a = [i for i in range(20) if i%2==0 and i!=0]
+print(a)
+```	
+
+where an if-statement has been added at the end.
+
+\appendix
+\newpage
+
+# Some python conventions
+
+The python language should preferably be written under the guidelines of 
+[PEP8](https://www.python.org/dev/peps/pep-0008/), written partly by python creator _Guido van Rossum_.
+
+## Variable names
+
+For variable naming use `lower_case_with_underscores`
+
+
+## Class names
+
+Classes use the `CapitalizedWords` convention.
+
+## Indentation
+
+Don't use tab, rather use 4 spaces.
