@@ -41,8 +41,8 @@ This guide is intended as a quickstart guide for people new to python, but with 
 with some other programming language. The explanations are kept short intendedly and each subject
 is covered in very little detail, with the means of keeping the guide short, yet provide the tools
 needed to get started. My suggestions are to read the guide while having an open python console closeby, in
-order to check the results given in the examples and to do further experiments on your own, and to
-refer to the [official documentation](https://docs.python.org/3/), when this guide isn't enough.
+order to check the results given in the examples and to do further experiments on your own. When this
+guide isn't enough I recommend you to refer to the [official documentation](https://docs.python.org/3/).
 
 ## A note on python versions
 This guide is written with python 3.7 kept in mind. Please note that python 2 is officially considered
@@ -78,7 +78,7 @@ the following exceptions/properties
 - Dictionaries
     - Hashed, have ordered pairs of _keywords_ and their respective _values_.
 - Sets
-    - Just like a mathematical set, no duplicates allowed.
+    - Just like mathematical sets, no duplicates allowed.
 
 
 ## Variable declaration; duck-typing
@@ -432,6 +432,7 @@ print(a.name)
 ## Methods
 
 Methods are defined in the following way
+
 ```{python}
 class Person():
     def __init__(self, name):
