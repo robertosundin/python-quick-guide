@@ -151,7 +151,7 @@ that can be used
 Again, not all operations are allowed, e.g conversion from `list` to `int`. Use common sense, and when in doubt
 use `help()`, e.g `help(str)`.
 
-Knowing this, the error from our previous example can be avoided this way
+Knowing this, the error from our previous example can be avoided
 
 ```{python}
 a = 'hello world'
@@ -170,7 +170,7 @@ a+str(b)
 
 ### Floats
 
-- Creation: `a = x.y`, where `x`,`y` are integers.
+- Creation: `a = x.y`, where `x`, `y` are integers.
 
 ### Complex
 
@@ -196,6 +196,12 @@ a = [1,2,3]
 ```{python}
 print(a[0])
 ```	
+The elements can also be changed the same way
+
+```{python}
+a[1] = 10
+print(a)
+```	
 
 ### Tuples
 
@@ -205,7 +211,11 @@ a = (1,2,3)
 ```	
 
 Tuples are indexed and values are fetched just as
-for lists.
+for lists. However, once created, elements cannot be changed (tuples are immutable!)
+
+```{python,error=TRUE}
+a[1] = 10
+```	
 
 ### Dictionaries
 
@@ -217,6 +227,14 @@ Values can be fetched by using the `get()` method
 ```{python}
 print(a.get('one'))
 ```	
+
+Dictionary keywords can also be run through using `for in`-loops
+
+```{python}
+for key in a:
+    print(key)
+```	
+
 
 ### Sets
 
