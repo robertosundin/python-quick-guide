@@ -101,7 +101,7 @@ and that `b` is of type 'int'
 print(type(b))
 ```	
 The interpreter has thus classified `a` as a float, because of the decimal point in the declaration
-and `b` as an integer because of a lack of the aforementioned.
+and `b` as an integer because of a lack thereof.
 
 ### Benefits of duck-typing
 
